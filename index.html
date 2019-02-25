@@ -1,0 +1,229 @@
+<html>
+  <head>
+    <meta charvctk_set="UTF-8">
+    <title>FloWaveNet Demo Page</title>
+  </head>
+    <h1>FloWaveNet Demo Page</h1>
+
+  <body>
+    <div>
+      <h2> Model Comparisons </h2>
+      <h2></h2>
+
+    <table>
+      <tbody>
+        <tr>
+            <td colspan="5"><span> Ground Truth </span></td>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/GT/1.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/GT/2.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/GT/3.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/GT/4.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/GT/5.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td colspan="5"><span> Autoregressive WaveNet (Mixture of Logistics) </span></td>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/MoL/1.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/MoL/2.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/MoL/3.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/MoL/4.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/MoL/5.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td colspan="5"><span> Autoregressive WaveNet (A single Gaussian) </span></td>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/Gaussian/1.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/Gaussian/2.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/Gaussian/3.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/Gaussian/4.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/Gaussian/5.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td colspan="5"><span> Gaussian IAF </span></td>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/IAF/1.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/IAF/2.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/IAF/3.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/IAF/4.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/IAF/5.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td colspan="5"><span> FloWaveNet </span></td>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/FWN/1.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/FWN/2.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/FWN/3.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/FWN/4.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/FWN/5.wav" type="audio/wav"></audio></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <br> </br>
+    <div>
+      <h2> Temperature Effect on Audio Quality Trade-off </h2>
+
+      <h3> Sample 1 (T = 0.0 ~ 1.0) </h3>
+
+      <img src="images/Temperature.gif" alt="temperature gif" height=400 width=400>
+
+      <h3> </h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>T = 0.0</th> <th>T = 0.5</th> <th>T = 0.8</th> <th>T = 1.0</th>
+        </tr>
+      </thead>
+
+       <tbody>
+        <tr>
+          <td colspan="4"><span>Sample 1</span></td>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/FWN/temp/1_0.0.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/FWN/temp/1_0.5.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/FWN/temp/1_0.8.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/FWN/temp/1_1.0.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td colspan="4"><span>Sample 2</span></td>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/FWN/temp/2_0.0.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/FWN/temp/2_0.5.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/FWN/temp/2_0.8.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/FWN/temp/2_1.0.wav" type="audio/wav"></audio></td>
+        </tr>
+        <tr>
+          <td colspan="4"><span>Sample 3</span></td>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/FWN/temp/3_0.0.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/FWN/temp/3_0.5.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/FWN/temp/3_0.8.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/FWN/temp/3_1.0.wav" type="audio/wav"></audio></td>
+        </tr>
+
+      </tbody>
+    </table>
+    </div>
+
+    <br> </br>
+    <div>
+      <h2> Analysis of ClariNet Loss Terms</h2>
+
+        <h3> Gaussian IAFs (Only KL, KL + Frame, Only Frame) Iterations 50K ~ 500K
+        </h3>
+
+        <table>
+          <thead>
+            <tr>
+              <th> Only KL </th> <th> KL + Frame </th> <th>Only Frame</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                <td colspan="3"><span>  </span></td>
+              </tr>
+              <tr>
+                <td><img src="images/Only%20KL.gif" alt="kl gif" height=400 width=400></td>
+                <td><img src="images/KL+Frame.gif" alt="kl+frame gif" height=400 width=400></td>
+                <td><img src="images/Only%20Frame.gif" alt="frame gif" height=400 width=400></td>
+              </tr>
+          </tbody>
+        </table>
+
+    <h3></h3>
+    <table>
+      <thead>
+        <tr>
+          <th>50K</th><th>110K</th><th>130K</th><th>200K</th><th>250K</th><th>500K</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="6"><span>Only KL </span></td>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/IAF/KL_50K.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/IAF/KL_110K.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/IAF/KL_130K.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/IAF/KL_200K.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/IAF/KL_250K.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/IAF/KL_500K.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td colspan="6"><span>KL + Frame </span></td>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/IAF/KL_Frame_50K.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/IAF/KL_Frame_110K.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/IAF/KL_Frame_130K.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/IAF/KL_Frame_200K.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/IAF/KL_Frame_250K.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/IAF/KL_Frame_500K.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td colspan="6"><span> Only Frame </span></td>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/IAF/Frame_50K.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/IAF/Frame_110K.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/IAF/Frame_130K.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/IAF/Frame_200K.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/IAF/Frame_250K.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/IAF/Frame_500K.wav" type="audio/wav"></audio></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <br> </br>
+    <div>
+    <h2> Causality of WaveNet Dilated Convolutions </h2>
+      <h2></h2>
+
+    <table>
+      <tbody>
+        <tr>
+            <td colspan="5"><span> FloWaveNet (Non-causal) </span></td>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/FWN/1.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/FWN/2.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/FWN/3.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/FWN/4.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/FWN/5.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td colspan="5"><span> FloWaveNet (Causal) </span></td>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/FWN/1_causal.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/FWN/2_causal.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/FWN/3_causal.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/FWN/4_causal.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/FWN/5_causal.wav" type="audio/wav"></audio></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </body>
+</html>
+
